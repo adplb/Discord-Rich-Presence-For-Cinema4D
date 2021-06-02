@@ -5,4 +5,4 @@
 
 To install place the pypresence folder inside this libs folder -> "AppData\Roaming\Maxon\python37\libs"
 
-And the .pyp file inside your plugins folder -> "C:\Program Files\Maxon Cinema 4D R23\plugins\RichPresence"
+And the .pyp file inside your plugins folder for example like this -> "C:\Program Files\Maxon Cinema 4D R23\plugins\RichPresence"
