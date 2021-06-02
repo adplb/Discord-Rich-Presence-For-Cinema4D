@@ -16,8 +16,8 @@ PLUGIN_ID = 1057290
 
 class BGThread(c4d.threading.C4DThread):
     def Main(self):
-        if(c4d.GetC4DVersion() < 20000):
-            gui.MessageDialog("Your current version of C4D is not supported. Supported versions of Cinema4D are: R20 to R24")
+        if(c4d.GetC4DVersion() < 23000):
+            gui.MessageDialog("Your current version of C4D is not supported. Supported versions of Cinema4D are: R23 to R24")
             return
         while True:
             if self.TestBreak():
