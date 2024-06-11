@@ -4,28 +4,27 @@ from c4d.threading import C4DThread
 from pypresence import Presence
 from c4d import plugins, utils, gui
 import time
+import asyncio
 
-#Current plugin version - 1.0 - Made by Jonte#4200
-#Global
-RPC = Presence("843479489245872130")
+# Current plugin version - 1.0.1 - Made by Jonte#4200 and updated to R2024 by adrianlarsson
+# Global
+RPC = Presence("YOUR_VALID_CLIENT_ID")
 project_name = ""
 thread = None
 starttime = time.time()
-#Plugin ID from Maxon's PluginCafe Forum
+# Plugin ID from Maxon's PluginCafe Forum
 PLUGIN_ID = 1057290
 
 class BGThread(c4d.threading.C4DThread):
     def Main(self):
-        if(c4d.GetC4DVersion() < 23000):
-            gui.MessageDialog("Your current version of C4D is not supported. Supported versions of Cinema4D are: R23 to R24")
-            return
+        # Removed version check to make it version-agnostic
         while True:
             if self.TestBreak():
                 return
-            Update()
+            asyncio.run(Update())
             time.sleep(15)
 
-def Update():
+async def Update():
     doc = c4d.documents.GetActiveDocument()
     version = c4d.GetC4DVersion()
     global project_name
@@ -33,7 +32,10 @@ def Update():
     project_name = doc.GetDocumentName()
     if not project_name:
         return
-    RPC.update(state=project_name, large_image="logo", large_text=f"R{str(version)[:2]}", start=starttime)
+    try:
+        await RPC.update(state=project_name, large_image="logo", large_text=f"R{str(version)[:2]}", start=starttime)
+    except Exception as e:
+        print(f"Error updating RPC: {e}")
 
 def PluginMessage(id, data):
     global thread
@@ -45,7 +47,7 @@ def PluginMessage(id, data):
         thread.End()
         RPC.close()
     elif id == c4d.C4DPL_RELOADPYTHONPLUGINS:
-        Update()
+        asyncio.run(Update())
 
 # Main function
 def main():
