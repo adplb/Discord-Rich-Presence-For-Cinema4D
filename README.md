@@ -3,9 +3,11 @@
 
 <img width="300" alt="Discord status demo" src="https://i.imgur.com/yl9lDfj.png">
 
-To install place the pypresence folder inside this libs folder -> "AppData\Roaming\Maxon\Maxon Cinema 4D 2024_XXXXXXXX\python311\libs"
+To install:
 
-And the .pyp file inside your plugins folder for example like this -> "C:\Program Files\Maxon Cinema 4D 2024\plugins\RichPresence"
+1: Place the pypresence folder inside this libs folder -> "AppData\Roaming\Maxon\Maxon Cinema 4D 2024_XXXXXXXX\python311\libs"
+
+2: Create a RichPresence folder in your plugins folder and Place the c4d_richpresence.pyp inside -> "C:\Program Files\Maxon Cinema 4D 2024\plugins\RichPresence"
 
 
 
