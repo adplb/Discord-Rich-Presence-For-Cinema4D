@@ -9,4 +9,4 @@ And the .pyp file inside your plugins folder for example like this -> "C:\Progra
 
 
 
-Original project by JuicySoup. I simply cleaned up some errors and removed the version check to ensure it will run if possible without being picky about the specific C4D version. If it runs, it runs.
+[Original project by JuicySoup](https://github.com/JuicySoup/Discord-Rich-Presence-For-Cinema4D/). I simply cleaned up some errors and removed the version check to ensure it will run if possible without being picky about the specific C4D version. If it runs, it runs.
