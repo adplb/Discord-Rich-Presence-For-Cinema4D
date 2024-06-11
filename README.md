@@ -6,3 +6,7 @@
 To install place the pypresence folder inside this libs folder -> "AppData\Roaming\Maxon\Maxon Cinema 4D 2024_XXXXXXXX\python311\libs"
 
 And the .pyp file inside your plugins folder for example like this -> "C:\Program Files\Maxon Cinema 4D 2024\plugins\RichPresence"
+
+
+
+Original project by JuicySoup. I simply cleaned up some errors and removed the version check to ensure it will run if possible without being picky about the specific C4D version. If it runs, it runs.
